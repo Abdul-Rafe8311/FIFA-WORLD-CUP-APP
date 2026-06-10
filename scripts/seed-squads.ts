@@ -1,7 +1,4 @@
-import { config } from "dotenv";
-config({ path: ".env.local" });
-config({ path: ".env" });
-
+import "./_env";
 import { readFileSync } from "node:fs";
 import { db } from "../src/db";
 import { players } from "../src/db/schema";
