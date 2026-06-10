@@ -14,21 +14,30 @@ body {
   overscroll-behavior-y: none;
 }
 
-/* App frame backdrop on larger screens */
+/* Stadium-at-night backdrop — fills the space around the app frame on desktop */
 body {
-  background-image: radial-gradient(
-      1200px 600px at 50% -10%,
-      rgba(0, 230, 118, 0.08),
-      transparent 60%
-    ),
-    #050807;
+  background-color: #04070a;
+  background-image:
+    radial-gradient(1100px 520px at 50% -8%, rgba(0, 230, 118, 0.14), transparent 60%),
+    radial-gradient(820px 460px at 100% 110%, rgba(0, 140, 90, 0.12), transparent 60%),
+    radial-gradient(820px 460px at 0% 110%, rgba(20, 90, 170, 0.1), transparent 60%);
   min-height: 100dvh;
 }
 
 @layer components {
+  /* Mobile-first app frame: full-bleed on phones, a centered phone frame on
+     larger screens (with side framing) so it reads as an intentional app. */
   .app-shell {
     @apply mx-auto w-full max-w-app min-h-[100dvh] bg-ink relative;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04), 0 30px 80px rgba(0, 0, 0, 0.6);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.05),
+      0 0 140px rgba(0, 230, 118, 0.06),
+      0 30px 90px rgba(0, 0, 0, 0.55);
+  }
+  @media (min-width: 540px) {
+    .app-shell {
+      @apply border-x border-ink-line;
+    }
   }
 
   .card {

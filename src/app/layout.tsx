@@ -51,10 +51,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <Providers>
-          <div className="app-shell">
-            {children}
-            <InstallBanner />
-          </div>
+          {children}
+          <InstallBanner />
           <RegisterSW />
         </Providers>
       </body>

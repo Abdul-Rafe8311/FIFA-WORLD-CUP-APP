@@ -7,7 +7,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   if (!session?.user?.id) redirect("/");
 
   return (
-    <div className="pb-20">
+    <div className="app-shell pb-24">
       {children}
       <BottomNav />
     </div>
