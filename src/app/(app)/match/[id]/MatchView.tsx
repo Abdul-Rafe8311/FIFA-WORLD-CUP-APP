@@ -82,30 +82,70 @@ export default function MatchView({ data }: { data: MatchViewData }) {
         </div>
       </header>
 
-      {/* Tabs */}
-      <div className="grid grid-cols-2 border-b border-ink-line">
-        {(["score", "lineup"] as const).map((t) => (
-          <button
-            key={t}
-            onClick={() => setTab(t)}
-            className={cn(
-              "py-3 text-sm font-semibold capitalize transition-colors",
-              tab === t ? "border-b-2 border-pitch text-pitch" : "text-white/50",
-            )}
-          >
-            {t === "score" ? "Score" : "Lineup"}
-          </button>
-        ))}
-      </div>
+      {/* Two-column: prediction + lineup (left) · AI Pundit (right) */}
+      <div className="grid gap-4 p-4 lg:grid-cols-[1fr_340px]">
+        <div className="min-w-0 space-y-4">
+          <div className="grid grid-cols-2 overflow-hidden rounded-xl border border-ink-line">
+            {(["score", "lineup"] as const).map((t) => (
+              <button
+                key={t}
+                onClick={() => setTab(t)}
+                className={cn(
+                  "py-2.5 text-sm font-semibold capitalize transition-colors",
+                  tab === t ? "bg-pitch text-black" : "bg-ink-card text-white/55 hover:text-white",
+                )}
+              >
+                {t === "score" ? "Score" : "Lineup"}
+              </button>
+            ))}
+          </div>
 
-      <div className="space-y-4 p-4">
-        {tab === "score" ? (
-          <ScoreTab data={data} scoreLocked={scoreLocked} finished={finished} />
-        ) : (
-          <LineupTab data={data} />
-        )}
+          {tab === "score" ? (
+            <ScoreTab data={data} scoreLocked={scoreLocked} finished={finished} />
+          ) : (
+            <LineupTab data={data} />
+          )}
+
+          {finished && data.myPrediction && <ShareCard predictionId={data.myPrediction.id} />}
+        </div>
+
+        <aside className="space-y-4 lg:sticky lg:top-20 lg:self-start">
+          <AIPundit ai={data.ai} finished={finished} />
+        </aside>
       </div>
     </main>
+  );
+}
+
+function AIPundit({
+  ai,
+  finished,
+}: {
+  ai: MatchViewData["ai"];
+  finished: boolean;
+}) {
+  return (
+    <section className="card border-pitch/20">
+      <div className="mb-2 flex items-center gap-2">
+        <span className="text-lg">🤖</span>
+        <span className="font-bold">The Pundit</span>
+        {ai.prediction && ai.prediction.home != null && (
+          <span className="tag ml-auto bg-pitch/15 text-pitch">
+            calls it {ai.prediction.home}–{ai.prediction.away}
+          </span>
+        )}
+      </div>
+      {ai.prediction?.text && <p className="text-sm text-white/75">{ai.prediction.text}</p>}
+      {ai.preview && (
+        <p className="mt-2 border-t border-ink-line pt-2 text-sm italic text-white/60">{ai.preview}</p>
+      )}
+      {!ai.prediction && !ai.preview && (
+        <p className="text-sm text-white/40">The Pundit hasn’t weighed in yet.</p>
+      )}
+      {finished && ai.roast && (
+        <p className="mt-2 border-t border-ink-line pt-2 text-sm text-amber-300/90">🎙️ {ai.roast}</p>
+      )}
+    </section>
   );
 }
 
@@ -130,7 +170,7 @@ function ScoreTab({
   scoreLocked: boolean;
   finished: boolean;
 }) {
-  const { match, myPrediction, ai } = data;
+  const { match, myPrediction } = data;
   const router = useRouter();
   const [home, setHome] = useState(myPrediction?.home ?? 0);
   const [away, setAway] = useState(myPrediction?.away ?? 0);
@@ -161,79 +201,36 @@ function ScoreTab({
     }
   }
 
-  return (
-    <>
-      {!scoreLocked ? (
-        <section className="card">
-          <p className="mb-4 text-center text-sm font-semibold text-white/70">
-            Your prediction
-          </p>
-          <div className="flex items-center justify-center gap-4">
-            <Stepper label={match.homeTeam} code={match.homeCode} value={home} onChange={setHome} />
-            <span className="pb-6 text-2xl font-black text-white/30">:</span>
-            <Stepper label={match.awayTeam} code={match.awayCode} value={away} onChange={setAway} />
-          </div>
-          {error && <p className="mt-3 text-center text-xs text-red-400">{error}</p>}
-          <button
-            onClick={save}
-            disabled={saving}
-            className={cn("btn-primary mt-5 w-full", saved && "animate-pop-in")}
-          >
-            {saving ? "Saving…" : saved ? "Saved ✓" : myPrediction ? "Update prediction" : "Save prediction"}
-          </button>
-          <p className="mt-2 text-center text-[11px] text-white/40">
-            Locks at kickoff · editable until then
-          </p>
-        </section>
+  return !scoreLocked ? (
+    <section className="card">
+      <p className="mb-4 text-center text-sm font-semibold text-white/70">Your prediction</p>
+      <div className="flex items-center justify-center gap-4">
+        <Stepper label={match.homeTeam} code={match.homeCode} value={home} onChange={setHome} />
+        <span className="pb-6 text-2xl font-black text-white/30">:</span>
+        <Stepper label={match.awayTeam} code={match.awayCode} value={away} onChange={setAway} />
+      </div>
+      {error && <p className="mt-3 text-center text-xs text-red-400">{error}</p>}
+      <button
+        onClick={save}
+        disabled={saving}
+        className={cn("btn-primary mt-5 w-full", saved && "animate-pop-in")}
+      >
+        {saving ? "Saving…" : saved ? "Saved ✓" : myPrediction ? "Update prediction" : "Save prediction"}
+      </button>
+      <p className="mt-2 text-center text-[11px] text-white/40">Locks at kickoff · editable until then</p>
+    </section>
+  ) : (
+    <section className="card text-center">
+      <p className="text-sm font-semibold text-white/70">Your prediction</p>
+      {myPrediction ? (
+        <p className="mt-2 text-3xl font-black tabular-nums">
+          {myPrediction.home}–{myPrediction.away}
+        </p>
       ) : (
-        <section className="card text-center">
-          <p className="text-sm font-semibold text-white/70">Your prediction</p>
-          {myPrediction ? (
-            <p className="mt-2 text-3xl font-black tabular-nums">
-              {myPrediction.home}–{myPrediction.away}
-            </p>
-          ) : (
-            <p className="mt-2 text-sm text-white/40">No prediction made — locked</p>
-          )}
-          {finished && myPrediction && (
-            <PointsPill points={myPrediction.points} />
-          )}
-        </section>
+        <p className="mt-2 text-sm text-white/40">No prediction made — locked</p>
       )}
-
-      {/* AI Pundit block */}
-      <section className="card border-pitch/20">
-        <div className="mb-2 flex items-center gap-2">
-          <span className="text-lg">🤖</span>
-          <span className="font-bold">The Pundit</span>
-          {ai.prediction && ai.prediction.home != null && (
-            <span className="tag ml-auto bg-pitch/15 text-pitch">
-              calls it {ai.prediction.home}–{ai.prediction.away}
-            </span>
-          )}
-        </div>
-        {ai.prediction?.text && (
-          <p className="text-sm text-white/75">{ai.prediction.text}</p>
-        )}
-        {ai.preview && (
-          <p className="mt-2 border-t border-ink-line pt-2 text-sm italic text-white/60">
-            {ai.preview}
-          </p>
-        )}
-        {!ai.prediction && !ai.preview && (
-          <p className="text-sm text-white/40">The Pundit hasn’t weighed in yet.</p>
-        )}
-        {finished && ai.roast && (
-          <p className="mt-2 border-t border-ink-line pt-2 text-sm text-amber-300/90">
-            🎙️ {ai.roast}
-          </p>
-        )}
-      </section>
-
-      {finished && myPrediction && (
-        <ShareCard predictionId={myPrediction.id} />
-      )}
-    </>
+      {finished && myPrediction && <PointsPill points={myPrediction.points} />}
+    </section>
   );
 }
 

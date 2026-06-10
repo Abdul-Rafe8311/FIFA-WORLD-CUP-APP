@@ -73,7 +73,7 @@ export default function ScheduleView({ matches }: { matches: MatchCardData[] }) 
           <h2 className="mb-2 flex items-center gap-2 text-sm font-bold text-pitch">
             <span className="h-2 w-2 animate-pulse-soft rounded-full bg-pitch" /> Today
           </h2>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
             {todayMatches.map((m) => (
               <MatchCard key={m.id} m={m} />
             ))}
@@ -114,7 +114,7 @@ export default function ScheduleView({ matches }: { matches: MatchCardData[] }) 
           </div>
         )}
 
-        <div className="grid grid-cols-1 gap-3 pb-4 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-3 pb-4 sm:grid-cols-2 xl:grid-cols-3">
           {dayMatches.length === 0 ? (
             <p className="col-span-full py-8 text-center text-sm text-white/40">
               No matches for this filter.

@@ -53,54 +53,81 @@ export default function LeaderboardView({
 function GlobalList({ rows, meId }: { rows: LeaderRow[]; meId: string }) {
   if (rows.length === 0) return <Empty text="No players ranked yet." />;
   return (
-    <ol className="space-y-2">
-      {rows.map((r) => (
-        <li
-          key={r.id}
-          className={cn(
-            "flex items-center gap-3 rounded-xl border px-3 py-2",
-            r.id === meId ? "border-pitch/50 bg-pitch/5" : "border-ink-line bg-ink-card",
-          )}
-        >
-          <span className="w-6 text-center text-sm font-bold text-white/45">{r.rank}</span>
-          <Avatar src={r.image} name={r.name} size={32} />
-          <div className="flex-1 truncate">
-            <span className="font-semibold">{r.name ?? "Player"}</span>
-            {r.isBot && <span className="ml-1 align-middle text-xs">🤖</span>}
-            {r.id === meId && <span className="ml-1 text-xs text-pitch">· you</span>}
-          </div>
-          <span className="text-lg">{flagEmoji(r.country)}</span>
-          <span className="w-12 text-right font-black tabular-nums text-pitch">{r.points}</span>
-        </li>
-      ))}
-    </ol>
+    <div className="overflow-hidden rounded-2xl border border-ink-line">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="border-b border-ink-line text-left text-[11px] uppercase tracking-wide text-white/40">
+            <th className="w-14 py-3 pl-4 font-semibold">#</th>
+            <th className="py-3 font-semibold">Player</th>
+            <th className="py-3 font-semibold">Country</th>
+            <th className="py-3 pr-4 text-right font-semibold">Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr
+              key={r.id}
+              className={cn(
+                "border-b border-ink-line/50 transition-colors last:border-0 hover:bg-ink-soft/40",
+                r.id === meId && "bg-pitch/5",
+              )}
+            >
+              <td className="py-2.5 pl-4 font-bold text-white/45">{r.rank}</td>
+              <td className="py-2.5">
+                <div className="flex items-center gap-2.5">
+                  <Avatar src={r.image} name={r.name} size={30} />
+                  <span className="font-semibold">{r.name ?? "Player"}</span>
+                  {r.isBot && <span className="text-xs">🤖</span>}
+                  {r.id === meId && <span className="text-xs text-pitch">· you</span>}
+                </div>
+              </td>
+              <td className="py-2.5 text-lg">{flagEmoji(r.country)}</td>
+              <td className="py-2.5 pr-4 text-right font-black tabular-nums text-pitch">{r.points}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
 function CountryList({ rows, myCountry }: { rows: CountryRow[]; myCountry: string | null }) {
   if (rows.length === 0) return <Empty text="No countries ranked yet. Set your country in Profile." />;
   return (
-    <ol className="space-y-2">
-      {rows.map((r) => (
-        <li
-          key={r.country}
-          className={cn(
-            "flex items-center gap-3 rounded-xl border px-3 py-2",
-            r.country === myCountry ? "border-pitch/50 bg-pitch/5" : "border-ink-line bg-ink-card",
-          )}
-        >
-          <span className="w-6 text-center text-sm font-bold text-white/45">{r.rank}</span>
-          <span className="text-2xl">{flagEmoji(r.country)}</span>
-          <div className="flex-1 truncate">
-            <p className="font-semibold">{COUNTRY_NAME[r.country] ?? r.country}</p>
-            <p className="text-[11px] text-white/45">{r.members} player{r.members === 1 ? "" : "s"}</p>
-          </div>
-          <span className="w-16 text-right font-black tabular-nums text-pitch">
-            {r.avgPoints.toFixed(1)}
-          </span>
-        </li>
-      ))}
-    </ol>
+    <div className="overflow-hidden rounded-2xl border border-ink-line">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="border-b border-ink-line text-left text-[11px] uppercase tracking-wide text-white/40">
+            <th className="w-14 py-3 pl-4 font-semibold">#</th>
+            <th className="py-3 font-semibold">Country</th>
+            <th className="py-3 font-semibold">Players</th>
+            <th className="py-3 pr-4 text-right font-semibold">Avg pts</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr
+              key={r.country}
+              className={cn(
+                "border-b border-ink-line/50 transition-colors last:border-0 hover:bg-ink-soft/40",
+                r.country === myCountry && "bg-pitch/5",
+              )}
+            >
+              <td className="py-2.5 pl-4 font-bold text-white/45">{r.rank}</td>
+              <td className="py-2.5">
+                <div className="flex items-center gap-2.5">
+                  <span className="text-2xl">{flagEmoji(r.country)}</span>
+                  <span className="font-semibold">{COUNTRY_NAME[r.country] ?? r.country}</span>
+                  {r.country === myCountry && <span className="text-xs text-pitch">· you</span>}
+                </div>
+              </td>
+              <td className="py-2.5 text-white/55">{r.members}</td>
+              <td className="py-2.5 pr-4 text-right font-black tabular-nums text-pitch">{r.avgPoints.toFixed(1)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 

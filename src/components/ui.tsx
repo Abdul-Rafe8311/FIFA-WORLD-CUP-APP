@@ -5,8 +5,8 @@ import { initials } from "@/lib/utils";
 
 export function TopBar({ title, right }: { title: string; right?: React.ReactNode }) {
   return (
-    <header className="sticky top-0 z-30 flex items-center justify-between border-b border-ink-line bg-ink/90 px-4 py-3 backdrop-blur">
-      <h1 className="text-lg font-extrabold tracking-tight">{title}</h1>
+    <header className="flex items-center justify-between px-4 pb-2 pt-5">
+      <h1 className="text-2xl font-extrabold tracking-tight">{title}</h1>
       {right}
     </header>
   );

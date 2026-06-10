@@ -38,7 +38,7 @@ export default function MatchCard({ m }: { m: MatchCardData }) {
   return (
     <Link
       href={`/match/${m.id}`}
-      className="card block active:scale-[0.99] transition-transform"
+      className="card block transition-colors transition-transform hover:border-pitch/30 active:scale-[0.99]"
     >
       <div className="mb-2 flex items-center justify-between text-[11px] text-white/45">
         <span>{m.groupName ?? m.stage.replaceAll("_", " ")}</span>
