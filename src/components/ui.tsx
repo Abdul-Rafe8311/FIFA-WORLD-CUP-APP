@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { initials } from "@/lib/utils";
+import { useTimezone } from "@/components/Timezone";
 
 export function TopBar({ title, right }: { title: string; right?: React.ReactNode }) {
   return (
@@ -54,17 +55,18 @@ export function LocalTime({
   iso: string;
   mode?: "time" | "datetime" | "day";
 }) {
+  const { tz } = useTimezone();
   const [text, setText] = useState("");
   useEffect(() => {
     const d = new Date(iso);
-    const opts: Intl.DateTimeFormatOptions =
+    const base: Intl.DateTimeFormatOptions =
       mode === "time"
         ? { hour: "2-digit", minute: "2-digit" }
         : mode === "day"
           ? { weekday: "short", day: "numeric", month: "short" }
           : { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" };
-    setText(new Intl.DateTimeFormat(undefined, opts).format(d));
-  }, [iso, mode]);
+    setText(new Intl.DateTimeFormat(undefined, { ...base, timeZone: tz }).format(d));
+  }, [iso, mode, tz]);
   return <span suppressHydrationWarning>{text || "…"}</span>;
 }
 

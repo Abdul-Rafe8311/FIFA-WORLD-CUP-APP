@@ -3,6 +3,7 @@ import "./globals.css";
 import Providers from "@/components/Providers";
 import InstallBanner from "@/components/InstallBanner";
 import RegisterSW from "@/components/RegisterSW";
+import { HexagonBackground } from "@/components/magic";
 
 const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
 
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <Providers>
+          <HexagonBackground fixed />
           {children}
           <InstallBanner />
           <RegisterSW />

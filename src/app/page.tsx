@@ -2,6 +2,7 @@ import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { Marquee, NationChip, ShimmerLink, HexagonBackground } from "@/components/magic";
 import IconCloud from "@/components/IconCloud";
+import VideoText from "@/components/VideoText";
 import { WC_NATIONS } from "@/lib/wc-nations";
 import { flagEmoji } from "@/lib/utils";
 
@@ -27,6 +28,11 @@ export default async function Landing() {
           ⚽ FIFA World Cup 2026 · 104 matches
           <span className="text-pitch">See features →</span>
         </Link>
+
+        {/* Video-text wordmark (football clip shows through the letters) */}
+        <div className="mx-auto mt-6 max-w-2xl">
+          <VideoText text="GoalCast" src="/football.mp4" height={120} />
+        </div>
 
         <h1 className="mx-auto mt-6 max-w-4xl text-balance text-5xl font-black leading-[1.05] tracking-tight sm:text-7xl">
           Predict every match.

@@ -4,14 +4,16 @@ import { useMemo, useState } from "react";
 import MatchCard, { type MatchCardData } from "@/components/MatchCard";
 import { TopBar } from "@/components/ui";
 import { cn } from "@/lib/utils";
+import { TimezoneSelect, useTimezone } from "@/components/Timezone";
 
-function localDateKey(iso: string): string {
-  // yyyy-mm-dd in the viewer's local timezone
-  const d = new Date(iso);
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, "0");
-  const day = String(d.getDate()).padStart(2, "0");
-  return `${y}-${m}-${day}`;
+/** yyyy-mm-dd for an instant, in the given IANA timezone (or device default). */
+function dateKeyInTz(iso: string, tz: string | undefined): string {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: tz,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date(iso));
 }
 
 function labelFor(key: string): string {
@@ -25,12 +27,15 @@ function labelFor(key: string): string {
 }
 
 export default function ScheduleView({ matches }: { matches: MatchCardData[] }) {
+  const { tz } = useTimezone();
+  const localDateKey = (iso: string) => dateKeyInTz(iso, tz);
   const todayKey = localDateKey(new Date().toISOString());
 
   const days = useMemo(() => {
     const set = new Set(matches.map((m) => localDateKey(m.kickoffUtc)));
     return Array.from(set).sort();
-  }, [matches]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [matches, tz]);
 
   const groups = useMemo(() => {
     const set = new Set(
@@ -66,7 +71,7 @@ export default function ScheduleView({ matches }: { matches: MatchCardData[] }) 
 
   return (
     <>
-      <TopBar title="Schedule" />
+      <TopBar title="Schedule" right={<TimezoneSelect />} />
 
       {todayMatches.length > 0 && (
         <section className="px-4 pt-4">

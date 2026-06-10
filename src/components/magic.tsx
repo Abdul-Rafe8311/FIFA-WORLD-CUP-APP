@@ -101,32 +101,49 @@ export function ShimmerButton({
   );
 }
 
-/** Subtle hexagon-pattern background layer (absolute, behind content). */
-export function HexagonBackground({ className }: { className?: string }) {
+/**
+ * Honeycomb hexagon-pattern background. Use `fixed` to fill the whole viewport
+ * behind all content, or default (absolute) to fill the nearest positioned
+ * ancestor.
+ */
+export function HexagonBackground({
+  className,
+  fixed = false,
+}: {
+  className?: string;
+  fixed?: boolean;
+}) {
+  // A seamless pointy-top hexagon tile.
   return (
     <div
       aria-hidden
-      className={cn("pointer-events-none absolute inset-0 -z-10 overflow-hidden opacity-[0.18]", className)}
+      className={cn(
+        "pointer-events-none overflow-hidden",
+        fixed ? "fixed inset-0 -z-10 opacity-[0.12]" : "absolute inset-0 -z-10 opacity-[0.16]",
+        className,
+      )}
     >
       <svg width="100%" height="100%">
         <defs>
-          <pattern id="hexes" width="56" height="48" patternUnits="userSpaceOnUse" patternTransform="scale(1)">
+          <pattern id="hexgrid" width="48" height="83.14" patternUnits="userSpaceOnUse" patternTransform="scale(0.9)">
             <path
-              d="M28 0 L56 16 L56 48 M28 0 L0 16 L0 48 M0 16 L28 32 L56 16 M28 32 L28 48"
+              d="M24 0 L48 13.86 L48 41.57 L24 55.43 L0 41.57 L0 13.86 Z
+                 M24 55.43 L48 69.28 L48 97 L24 110.86 L0 97 L0 69.28 Z
+                 M48 41.57 L72 55.43 L72 83.14 M0 41.57 L-24 55.43 L-24 83.14"
               fill="none"
-              stroke="rgba(0,230,118,0.35)"
+              stroke="rgba(0,230,118,0.30)"
               strokeWidth="1"
             />
           </pattern>
-          <radialGradient id="hexfade" cx="50%" cy="0%" r="80%">
-            <stop offset="0%" stopColor="white" stopOpacity="1" />
+          <radialGradient id="hexfade" cx="50%" cy="30%" r="75%">
+            <stop offset="0%" stopColor="white" stopOpacity="0.9" />
             <stop offset="100%" stopColor="white" stopOpacity="0" />
           </radialGradient>
           <mask id="hexmask">
             <rect width="100%" height="100%" fill="url(#hexfade)" />
           </mask>
         </defs>
-        <rect width="100%" height="100%" fill="url(#hexes)" mask="url(#hexmask)" />
+        <rect width="100%" height="100%" fill="url(#hexgrid)" mask="url(#hexmask)" />
       </svg>
     </div>
   );
