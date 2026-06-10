@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { auth } from "@/lib/auth";
-import { GoogleSignIn } from "@/components/AuthButtons";
+import { Marquee, NationChip, ShimmerLink, HexagonBackground } from "@/components/magic";
+import IconCloud from "@/components/IconCloud";
+import { WC_NATIONS } from "@/lib/wc-nations";
 
 export const dynamic = "force-dynamic";
 
@@ -15,35 +17,57 @@ const FEATURES = [
 
 export default async function Landing() {
   const session = await auth();
+  const codes = WC_NATIONS.map((n) => n.code);
 
   return (
-    <main className="mx-auto w-full max-w-6xl px-5 pb-16 pt-10 sm:pt-16">
+    <main className="relative mx-auto w-full max-w-6xl px-5 pb-16 pt-10 sm:pt-14">
       {/* Hero */}
-      <section className="mx-auto max-w-3xl text-center">
+      <section className="relative mx-auto max-w-3xl text-center">
+        <HexagonBackground />
         <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-3xl bg-pitch text-4xl shadow-xl shadow-pitch/25">
           ⚽
         </div>
-        <h1 className="text-5xl font-black tracking-tight sm:text-6xl">
-          Goal<span className="text-pitch">Cast</span>
+        <h1 className="bg-gradient-to-b from-white to-white/60 bg-clip-text text-5xl font-black tracking-tight text-transparent sm:text-6xl">
+          Goal<span className="bg-gradient-to-r from-pitch to-emerald-400 bg-clip-text text-transparent">Cast</span>
         </h1>
         <p className="mx-auto mt-4 max-w-md text-balance text-lg text-white/65">
           Predict every World Cup match. Beat the AI. Top your country.
         </p>
 
-        <div className="mx-auto mt-8 max-w-sm">
+        <div className="mx-auto mt-8 max-w-sm space-y-3">
           {session?.user ? (
-            <Link href="/schedule" className="btn-primary w-full text-base">
-              Open App →
-            </Link>
+            <ShimmerLink href="/schedule">Open App →</ShimmerLink>
           ) : (
             <>
-              <GoogleSignIn />
-              <p className="mt-2 text-center text-xs text-white/40">
-                Free to play · World Cup 2026
-              </p>
+              <ShimmerLink href="/login?mode=signup">Sign Up — it&apos;s free</ShimmerLink>
+              <Link href="/login?mode=login" className="btn-ghost w-full">
+                Log In
+              </Link>
             </>
           )}
         </div>
+      </section>
+
+      {/* Icon cloud of nations */}
+      <section className="mt-10 flex flex-col items-center">
+        <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-white/40">
+          48 nations · one trophy
+        </p>
+        <IconCloud codes={codes} size={300} />
+      </section>
+
+      {/* Marquee of nations */}
+      <section className="mt-4 space-y-3">
+        <Marquee durationSec={36}>
+          {WC_NATIONS.slice(0, 18).map((n) => (
+            <NationChip key={n.code} code={n.code} name={n.name} />
+          ))}
+        </Marquee>
+        <Marquee durationSec={42} reverse>
+          {WC_NATIONS.slice(18).map((n) => (
+            <NationChip key={n.code} code={n.code} name={n.name} />
+          ))}
+        </Marquee>
       </section>
 
       {/* Features */}
@@ -63,7 +87,6 @@ export default async function Landing() {
               </div>
             </div>
           ))}
-          {/* Final CTA card fills the grid nicely on desktop */}
           <div className="card flex flex-col items-start justify-center gap-2 border-pitch/30 bg-pitch/5 sm:col-span-2 lg:col-span-1">
             <p className="text-lg font-bold">Ready to play?</p>
             <p className="text-sm text-white/60">Sign in and lock in your first prediction.</p>
@@ -72,9 +95,9 @@ export default async function Landing() {
                 Open App →
               </Link>
             ) : (
-              <div className="mt-1 w-full">
-                <GoogleSignIn />
-              </div>
+              <Link href="/login?mode=signup" className="btn-primary mt-1 w-full">
+                Get started
+              </Link>
             )}
           </div>
         </div>

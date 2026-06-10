@@ -342,18 +342,20 @@ function LineupTab({ data }: { data: MatchViewData }) {
       <p className="rounded-xl bg-ink-soft px-3 py-2 text-center text-[11px] text-white/55">
         Pick the starting XI (exactly 1 GK). Locks 90 min before kickoff.
       </p>
-      {teams.map((t) => (
-        <TeamLineup
-          key={t.code}
-          teamCode={t.code}
-          teamName={t.name}
-          matchId={match.id}
-          players={data.players.filter((p) => p.teamCode === t.code)}
-          myLineup={data.myLineups.find((l) => l.teamCode === t.code) ?? null}
-          actual={data.actualLineups.find((l) => l.teamCode === t.code) ?? null}
-          locked={lineupLocked}
-        />
-      ))}
+      <div className="grid gap-6 lg:grid-cols-2">
+        {teams.map((t) => (
+          <TeamLineup
+            key={t.code}
+            teamCode={t.code}
+            teamName={t.name}
+            matchId={match.id}
+            players={data.players.filter((p) => p.teamCode === t.code)}
+            myLineup={data.myLineups.find((l) => l.teamCode === t.code) ?? null}
+            actual={data.actualLineups.find((l) => l.teamCode === t.code) ?? null}
+            locked={lineupLocked}
+          />
+        ))}
+      </div>
     </div>
   );
 }

@@ -15,7 +15,7 @@ export default function BottomNav() {
   const pathname = usePathname();
   return (
     <nav
-      className="fixed bottom-0 left-1/2 z-40 w-full max-w-app -translate-x-1/2 border-t border-ink-line bg-ink/95 backdrop-blur"
+      className="fixed bottom-0 left-1/2 z-40 w-full max-w-app -translate-x-1/2 border-t border-ink-line bg-ink/95 backdrop-blur sm:max-w-2xl lg:max-w-3xl"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <ul className="grid grid-cols-4">

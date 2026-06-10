@@ -19,6 +19,7 @@ export const users = pgTable("users", {
   name: text("name"),
   email: text("email").notNull().unique(),
   image: text("image"),
+  passwordHash: text("password_hash"), // null for Google-only accounts
   country: varchar("country", { length: 2 }), // ISO-2, nullable until set
   isBot: boolean("is_bot").notNull().default(false),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),

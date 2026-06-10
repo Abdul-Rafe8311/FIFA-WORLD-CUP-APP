@@ -25,10 +25,10 @@ body {
 }
 
 @layer components {
-  /* Mobile-first app frame: full-bleed on phones, a centered phone frame on
-     larger screens (with side framing) so it reads as an intentional app. */
+  /* Responsive app frame: full-bleed on phones, a wider centered app frame
+     on tablet/laptop so it uses the screen instead of a thin strip. */
   .app-shell {
-    @apply mx-auto w-full max-w-app min-h-[100dvh] bg-ink relative;
+    @apply mx-auto w-full max-w-app min-h-[100dvh] bg-ink relative sm:max-w-2xl lg:max-w-3xl;
     box-shadow:
       0 0 0 1px rgba(255, 255, 255, 0.05),
       0 0 140px rgba(0, 230, 118, 0.06),
@@ -67,6 +67,11 @@ body {
 
   .tab-active {
     @apply text-pitch;
+  }
+
+  .login-input {
+    @apply w-full rounded-xl border border-ink-line bg-ink px-3 py-2.5 text-sm outline-none
+      transition-colors focus:border-pitch placeholder:text-white/30;
   }
 }
 

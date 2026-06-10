@@ -90,7 +90,7 @@ export default function ProfileView({
           </div>
         </section>
 
-        <section className="grid grid-cols-2 gap-3">
+        <section className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           {cells.map((c) => (
             <div key={c.label} className="card text-center">
               <p className="text-2xl font-black text-pitch">{c.value}</p>

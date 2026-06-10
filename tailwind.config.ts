@@ -45,12 +45,21 @@ const config: Config = {
           "25%": { transform: "translateX(-6px)" },
           "75%": { transform: "translateX(6px)" },
         },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+        "shimmer-slide": {
+          to: { transform: "translateX(calc(100% + 100px))" },
+        },
       },
       animation: {
         "pop-in": "pop-in 0.35s ease-out",
         "slide-up": "slide-up 0.3s ease-out",
         "pulse-soft": "pulse-soft 1.4s ease-in-out infinite",
         shake: "shake 0.4s ease-in-out",
+        marquee: "marquee var(--duration, 32s) linear infinite",
+        "marquee-rev": "marquee var(--duration, 32s) linear infinite reverse",
       },
     },
   },

@@ -1,5 +1,7 @@
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
+import Credentials from "next-auth/providers/credentials";
+import bcrypt from "bcryptjs";
 import { db } from "@/db";
 import { users } from "@/db/schema";
 import { eq } from "drizzle-orm";
@@ -23,13 +25,35 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       clientId: process.env.AUTH_GOOGLE_ID,
       clientSecret: process.env.AUTH_GOOGLE_SECRET,
     }),
+    Credentials({
+      credentials: {
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(creds) {
+        const email = typeof creds?.email === "string" ? creds.email.trim().toLowerCase() : "";
+        const password = typeof creds?.password === "string" ? creds.password : "";
+        if (!email || !password) return null;
+
+        const rows = await db.select().from(users).where(eq(users.email, email)).limit(1);
+        const u = rows[0];
+        if (!u || !u.passwordHash) return null; // no account or Google-only account
+
+        const ok = await bcrypt.compare(password, u.passwordHash);
+        if (!ok) return null;
+
+        return { id: u.id, name: u.name, email: u.email, image: u.image };
+      },
+    }),
   ],
   session: { strategy: "jwt" },
   trustHost: true,
   callbacks: {
-    async signIn({ user }) {
+    async signIn({ user, account }) {
+      // Credentials accounts are already validated in authorize().
+      if (account?.provider === "credentials") return true;
       if (!user.email) return false;
-      // Upsert the user into our custom users table.
+      // Upsert OAuth (Google) users into our custom users table.
       const existing = await db
         .select({ id: users.id })
         .from(users)
