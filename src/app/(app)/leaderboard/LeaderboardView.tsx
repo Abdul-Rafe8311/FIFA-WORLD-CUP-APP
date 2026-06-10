@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { TopBar, Avatar } from "@/components/ui";
 import { flagEmoji, cn } from "@/lib/utils";
@@ -10,27 +9,24 @@ import type { LeaderRow, CountryRow } from "@/lib/queries";
 export default function LeaderboardView({
   global,
   countries,
-  myLeagues,
   meId,
   myCountry,
 }: {
   global: LeaderRow[];
   countries: CountryRow[];
-  myLeagues: { id: string; name: string }[];
   meId: string;
   myCountry: string | null;
 }) {
-  const [tab, setTab] = useState<"global" | "countries" | "leagues">("global");
+  const [tab, setTab] = useState<"global" | "countries">("global");
 
   return (
     <>
       <TopBar title="Leaderboard" />
-      <div className="grid grid-cols-3 border-b border-ink-line">
+      <div className="grid grid-cols-2 border-b border-ink-line">
         {(
           [
             ["global", "Global"],
             ["countries", "Countries"],
-            ["leagues", "My Leagues"],
           ] as const
         ).map(([k, label]) => (
           <button
@@ -49,7 +45,6 @@ export default function LeaderboardView({
       <div className="p-4">
         {tab === "global" && <GlobalList rows={global} meId={meId} />}
         {tab === "countries" && <CountryList rows={countries} myCountry={myCountry} />}
-        {tab === "leagues" && <LeagueLinks leagues={myLeagues} />}
       </div>
     </>
   );
@@ -106,33 +101,6 @@ function CountryList({ rows, myCountry }: { rows: CountryRow[]; myCountry: strin
         </li>
       ))}
     </ol>
-  );
-}
-
-function LeagueLinks({ leagues }: { leagues: { id: string; name: string }[] }) {
-  if (leagues.length === 0)
-    return (
-      <div className="text-center">
-        <Empty text="You're not in any leagues yet." />
-        <Link href="/leagues" className="btn-primary mt-2 inline-flex">
-          Create or join a league
-        </Link>
-      </div>
-    );
-  return (
-    <ul className="space-y-2">
-      {leagues.map((l) => (
-        <li key={l.id}>
-          <Link
-            href={`/leagues/${l.id}`}
-            className="flex items-center justify-between rounded-xl border border-ink-line bg-ink-card px-4 py-3 active:scale-[0.99]"
-          >
-            <span className="font-semibold">{l.name}</span>
-            <span className="text-white/40">→</span>
-          </Link>
-        </li>
-      ))}
-    </ul>
   );
 }
 

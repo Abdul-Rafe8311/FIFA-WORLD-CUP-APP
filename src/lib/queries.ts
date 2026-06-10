@@ -1,5 +1,5 @@
 import { db } from "@/db";
-import { users, predictions, lineupPredictions, leagueMembers } from "@/db/schema";
+import { users, predictions, lineupPredictions } from "@/db/schema";
 import { sql, eq, and } from "drizzle-orm";
 
 export type LeaderRow = {
@@ -126,43 +126,6 @@ export async function getUserStats(userId: string): Promise<UserStats> {
     accuracy: scored ? Math.round(((exactCount + correctCount) / scored) * 100) : 0,
     penaltyBest: Number(penalty[0]?.best ?? 0),
   };
-}
-
-/** Standings for the members of a single league. */
-export async function getLeagueStandings(leagueId: string): Promise<LeaderRow[]> {
-  const rows = (await db.execute(sql`
-    SELECT u.id, u.name, u.image, u.country, u.is_bot,
-      COALESCE(p.pts, 0) + COALESCE(l.pts, 0) AS points
-    FROM ${leagueMembers} lm
-    JOIN ${users} u ON u.id = lm.user_id
-    LEFT JOIN (
-      SELECT user_id, SUM(points) AS pts FROM ${predictions}
-      WHERE points IS NOT NULL GROUP BY user_id
-    ) p ON p.user_id = u.id
-    LEFT JOIN (
-      SELECT user_id, SUM(points) AS pts FROM ${lineupPredictions}
-      WHERE points IS NOT NULL GROUP BY user_id
-    ) l ON l.user_id = u.id
-    WHERE lm.league_id = ${leagueId}
-    ORDER BY points DESC, u.created_at ASC
-  `)) as unknown as Array<{
-    id: string;
-    name: string | null;
-    image: string | null;
-    country: string | null;
-    is_bot: boolean;
-    points: number;
-  }>;
-
-  return rows.map((r, i) => ({
-    id: r.id,
-    name: r.name,
-    image: r.image,
-    country: r.country,
-    isBot: r.is_bot,
-    points: Number(r.points),
-    rank: i + 1,
-  }));
 }
 
 export async function getBotUserId(): Promise<string | null> {

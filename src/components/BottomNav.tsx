@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 const TABS = [
   { href: "/schedule", label: "Schedule", icon: "📅" },
   { href: "/leaderboard", label: "Ranks", icon: "🏆" },
-  { href: "/leagues", label: "Leagues", icon: "👥" },
   { href: "/penalty", label: "Penalty", icon: "🥅" },
   { href: "/profile", label: "Profile", icon: "👤" },
 ];
@@ -19,7 +18,7 @@ export default function BottomNav() {
       className="fixed bottom-0 left-1/2 z-40 w-full max-w-app -translate-x-1/2 border-t border-ink-line bg-ink/95 backdrop-blur"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
-      <ul className="grid grid-cols-5">
+      <ul className="grid grid-cols-4">
         {TABS.map((t) => {
           const active = pathname === t.href || pathname.startsWith(t.href + "/");
           return (

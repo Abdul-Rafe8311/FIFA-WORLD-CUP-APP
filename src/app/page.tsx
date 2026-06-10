@@ -8,7 +8,6 @@ const FEATURES = [
   { icon: "🎯", title: "Predict & climb", text: "Call every scoreline and rise up the leaderboards." },
   { icon: "🤖", title: "Beat the AI Pundit", text: "An AI predicts every match and plays against you." },
   { icon: "🌍", title: "Country vs Country", text: "Your points feed your nation's global ranking." },
-  { icon: "👥", title: "Private leagues", text: "Invite friends with a 6-char code." },
   { icon: "🥅", title: "Penalty shootout", text: "Take on an AI keeper in a daily mini-game." },
   { icon: "📋", title: "Predict the XI", text: "Guess the starting eleven before lineups drop." },
   { icon: "✅", title: "Shareable cards", text: "Brag with 'I called it' result cards." },
