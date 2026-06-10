@@ -53,6 +53,14 @@ const config: Config = {
         "shimmer-slide": {
           to: { transform: "translateX(calc(100% + 100px))" },
         },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-6px)" },
+        },
+        "ball-kick": {
+          "0%, 100%": { transform: "translate(0,0)", opacity: "0.4" },
+          "50%": { transform: "translate(34px,-26px)", opacity: "1" },
+        },
       },
       animation: {
         "pop-in": "pop-in 0.35s ease-out",
@@ -61,6 +69,8 @@ const config: Config = {
         shake: "shake 0.4s ease-in-out",
         marquee: "marquee var(--duration, 32s) linear infinite",
         "marquee-rev": "marquee var(--duration, 32s) linear infinite reverse",
+        float: "float 3.5s ease-in-out infinite",
+        "ball-kick": "ball-kick 2.4s ease-in-out infinite",
       },
     },
   },

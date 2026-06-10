@@ -3,6 +3,8 @@ import { auth } from "@/lib/auth";
 import { Marquee, NationChip, ShimmerLink, HexagonBackground } from "@/components/magic";
 import IconCloud from "@/components/IconCloud";
 import VideoText from "@/components/VideoText";
+import FeatureSkeletons from "@/components/FeatureSkeletons";
+import Faq from "@/components/Faq";
 import { WC_NATIONS } from "@/lib/wc-nations";
 import { flagEmoji } from "@/lib/utils";
 
@@ -91,51 +93,8 @@ export default async function Landing() {
           subtitle="Predictions, an AI rival, leaderboards, lineups and a mini-game — all free."
         />
 
-        <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
-          {/* AI Pundit — wide */}
-          <FeatureCard
-            className="md:col-span-2"
-            icon="🤖"
-            title="Beat the AI Pundit"
-            text="An AI predicts every single match with a cocky, witty take — and plays against you on the leaderboard. Out-predict it for bragging rights."
-          >
-            <div className="rounded-xl border border-ink-line bg-ink p-4">
-              <div className="mb-2 flex items-center gap-2 text-sm font-bold">
-                🤖 The Pundit <span className="tag ml-auto bg-pitch/15 text-pitch">calls it 2–1</span>
-              </div>
-              <p className="text-sm italic text-white/60">
-                “{flagEmoji("BR")} Brazil have too much flair up top. {flagEmoji("AR")} Argentina
-                grit it out but fall just short. Book it.”
-              </p>
-            </div>
-          </FeatureCard>
-
-          {/* Penalty */}
-          <FeatureCard icon="🥅" title="Penalty shootout" text="Take on an AI keeper that learns your habits. 5 kicks a day.">
-            <MiniGoal />
-          </FeatureCard>
-
-          {/* Leaderboard */}
-          <FeatureCard icon="🏆" title="Global & country ranks" text="Earn points, climb the world table, and carry your nation up the country leaderboard.">
-            <MiniLeaderboard />
-          </FeatureCard>
-
-          {/* Lineups — wide */}
-          <FeatureCard
-            className="md:col-span-2"
-            icon="📋"
-            title="Predict the Starting XI"
-            text="Guess the 11 starters before official lineups drop. Nail them for bonus points — locks 90 minutes before kickoff so nobody can copy."
-          >
-            <div className="flex flex-wrap gap-1.5">
-              {["GK", "DEF", "DEF", "MID", "MID", "FWD"].map((p, i) => (
-                <span key={i} className="rounded-lg border border-pitch/40 bg-pitch/10 px-2.5 py-1 text-xs font-semibold text-pitch">
-                  {p}
-                </span>
-              ))}
-              <span className="rounded-lg border border-ink-line px-2.5 py-1 text-xs text-white/40">+5 more</span>
-            </div>
-          </FeatureCard>
+        <div className="mt-10">
+          <FeatureSkeletons />
         </div>
       </section>
 
@@ -177,6 +136,9 @@ export default async function Landing() {
           ))}
         </div>
       </section>
+
+      {/* ===== FAQ ===== */}
+      <Faq />
 
       {/* ===== FINAL CTA ===== */}
       <section className="mx-auto max-w-6xl px-5 pb-20">
@@ -290,67 +252,3 @@ function SectionHeading({ eyebrow, title, subtitle }: { eyebrow: string; title: 
   );
 }
 
-function FeatureCard({
-  icon,
-  title,
-  text,
-  className,
-  children,
-}: {
-  icon: string;
-  title: string;
-  text: string;
-  className?: string;
-  children?: React.ReactNode;
-}) {
-  return (
-    <div className={`card flex flex-col gap-4 transition-colors hover:border-pitch/30 ${className ?? ""}`}>
-      <div>
-        <div className="mb-2 flex h-11 w-11 items-center justify-center rounded-xl bg-ink-soft text-xl">{icon}</div>
-        <h3 className="text-lg font-bold">{title}</h3>
-        <p className="mt-1 text-sm text-white/55">{text}</p>
-      </div>
-      {children && <div className="mt-auto">{children}</div>}
-    </div>
-  );
-}
-
-function MiniGoal() {
-  return (
-    <div className="grid aspect-[3/2] grid-cols-3 grid-rows-2 gap-1 rounded-lg border-2 border-white/60 p-1">
-      {Array.from({ length: 6 }).map((_, i) => (
-        <div key={i} className={`rounded ${i === 2 ? "bg-pitch/30" : "bg-white/5"}`}>
-          {i === 2 && <div className="flex h-full items-center justify-center text-sm">⚽</div>}
-          {i === 5 && <div className="flex h-full items-center justify-center text-sm">🧤</div>}
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function MiniLeaderboard() {
-  const rows = [
-    { c: "BR", n: "You", p: 27, me: true },
-    { c: "GB", n: "The Pundit", p: 24, bot: true },
-    { c: "FR", n: "Léa", p: 21 },
-  ];
-  return (
-    <div className="space-y-1.5">
-      {rows.map((r, i) => (
-        <div
-          key={i}
-          className={`flex items-center gap-2 rounded-lg border px-2.5 py-1.5 text-xs ${
-            r.me ? "border-pitch/50 bg-pitch/5" : "border-ink-line bg-ink"
-          }`}
-        >
-          <span className="w-4 text-center font-bold text-white/40">{i + 1}</span>
-          <span>{flagEmoji(r.c)}</span>
-          <span className="flex-1 font-semibold">
-            {r.n} {r.bot && "🤖"}
-          </span>
-          <span className="font-black text-pitch">{r.p}</span>
-        </div>
-      ))}
-    </div>
-  );
-}
