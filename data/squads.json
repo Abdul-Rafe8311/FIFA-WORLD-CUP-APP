@@ -1,0 +1,408 @@
+{
+  "_comment": "PLACEHOLDER squads. Replace with real 26-man squads. Keep ISO-2 team codes matching matches.homeCode/awayCode. Each team needs exactly one selectable XI with >=1 GK. shirtNumber must be unique within a team.",
+  "_format": {
+    "BR": [
+      {
+        "name": "Alisson",
+        "position": "GK",
+        "shirtNumber": 1
+      }
+    ]
+  },
+  "BR": [
+    {
+      "name": "Brazil GK 1 (placeholder)",
+      "position": "GK",
+      "shirtNumber": 1
+    },
+    {
+      "name": "Brazil GK 2 (placeholder)",
+      "position": "GK",
+      "shirtNumber": 2
+    },
+    {
+      "name": "Brazil GK 3 (placeholder)",
+      "position": "GK",
+      "shirtNumber": 3
+    },
+    {
+      "name": "Brazil DEF 1 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 4
+    },
+    {
+      "name": "Brazil DEF 2 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 5
+    },
+    {
+      "name": "Brazil DEF 3 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 6
+    },
+    {
+      "name": "Brazil DEF 4 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 7
+    },
+    {
+      "name": "Brazil DEF 5 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 8
+    },
+    {
+      "name": "Brazil DEF 6 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 9
+    },
+    {
+      "name": "Brazil DEF 7 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 10
+    },
+    {
+      "name": "Brazil DEF 8 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 11
+    },
+    {
+      "name": "Brazil DEF 9 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 12
+    },
+    {
+      "name": "Brazil MID 1 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 13
+    },
+    {
+      "name": "Brazil MID 2 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 14
+    },
+    {
+      "name": "Brazil MID 3 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 15
+    },
+    {
+      "name": "Brazil MID 4 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 16
+    },
+    {
+      "name": "Brazil MID 5 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 17
+    },
+    {
+      "name": "Brazil MID 6 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 18
+    },
+    {
+      "name": "Brazil MID 7 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 19
+    },
+    {
+      "name": "Brazil MID 8 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 20
+    },
+    {
+      "name": "Brazil FWD 1 (placeholder)",
+      "position": "FWD",
+      "shirtNumber": 21
+    },
+    {
+      "name": "Brazil FWD 2 (placeholder)",
+      "position": "FWD",
+      "shirtNumber": 22
+    },
+    {
+      "name": "Brazil FWD 3 (placeholder)",
+      "position": "FWD",
+      "shirtNumber": 23
+    },
+    {
+      "name": "Brazil FWD 4 (placeholder)",
+      "position": "FWD",
+      "shirtNumber": 24
+    },
+    {
+      "name": "Brazil FWD 5 (placeholder)",
+      "position": "FWD",
+      "shirtNumber": 25
+    },
+    {
+      "name": "Brazil FWD 6 (placeholder)",
+      "position": "FWD",
+      "shirtNumber": 26
+    }
+  ],
+  "AR": [
+    {
+      "name": "Argentina GK 1 (placeholder)",
+      "position": "GK",
+      "shirtNumber": 1
+    },
+    {
+      "name": "Argentina GK 2 (placeholder)",
+      "position": "GK",
+      "shirtNumber": 2
+    },
+    {
+      "name": "Argentina GK 3 (placeholder)",
+      "position": "GK",
+      "shirtNumber": 3
+    },
+    {
+      "name": "Argentina DEF 1 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 4
+    },
+    {
+      "name": "Argentina DEF 2 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 5
+    },
+    {
+      "name": "Argentina DEF 3 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 6
+    },
+    {
+      "name": "Argentina DEF 4 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 7
+    },
+    {
+      "name": "Argentina DEF 5 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 8
+    },
+    {
+      "name": "Argentina DEF 6 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 9
+    },
+    {
+      "name": "Argentina DEF 7 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 10
+    },
+    {
+      "name": "Argentina DEF 8 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 11
+    },
+    {
+      "name": "Argentina DEF 9 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 12
+    },
+    {
+      "name": "Argentina MID 1 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 13
+    },
+    {
+      "name": "Argentina MID 2 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 14
+    },
+    {
+      "name": "Argentina MID 3 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 15
+    },
+    {
+      "name": "Argentina MID 4 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 16
+    },
+    {
+      "name": "Argentina MID 5 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 17
+    },
+    {
+      "name": "Argentina MID 6 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 18
+    },
+    {
+      "name": "Argentina MID 7 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 19
+    },
+    {
+      "name": "Argentina MID 8 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 20
+    },
+    {
+      "name": "Argentina FWD 1 (placeholder)",
+      "position": "FWD",
+      "shirtNumber": 21
+    },
+    {
+      "name": "Argentina FWD 2 (placeholder)",
+      "position": "FWD",
+      "shirtNumber": 22
+    },
+    {
+      "name": "Argentina FWD 3 (placeholder)",
+      "position": "FWD",
+      "shirtNumber": 23
+    },
+    {
+      "name": "Argentina FWD 4 (placeholder)",
+      "position": "FWD",
+      "shirtNumber": 24
+    },
+    {
+      "name": "Argentina FWD 5 (placeholder)",
+      "position": "FWD",
+      "shirtNumber": 25
+    },
+    {
+      "name": "Argentina FWD 6 (placeholder)",
+      "position": "FWD",
+      "shirtNumber": 26
+    }
+  ],
+  "FR": [
+    {
+      "name": "France GK 1 (placeholder)",
+      "position": "GK",
+      "shirtNumber": 1
+    },
+    {
+      "name": "France GK 2 (placeholder)",
+      "position": "GK",
+      "shirtNumber": 2
+    },
+    {
+      "name": "France GK 3 (placeholder)",
+      "position": "GK",
+      "shirtNumber": 3
+    },
+    {
+      "name": "France DEF 1 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 4
+    },
+    {
+      "name": "France DEF 2 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 5
+    },
+    {
+      "name": "France DEF 3 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 6
+    },
+    {
+      "name": "France DEF 4 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 7
+    },
+    {
+      "name": "France DEF 5 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 8
+    },
+    {
+      "name": "France DEF 6 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 9
+    },
+    {
+      "name": "France DEF 7 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 10
+    },
+    {
+      "name": "France DEF 8 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 11
+    },
+    {
+      "name": "France DEF 9 (placeholder)",
+      "position": "DEF",
+      "shirtNumber": 12
+    },
+    {
+      "name": "France MID 1 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 13
+    },
+    {
+      "name": "France MID 2 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 14
+    },
+    {
+      "name": "France MID 3 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 15
+    },
+    {
+      "name": "France MID 4 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 16
+    },
+    {
+      "name": "France MID 5 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 17
+    },
+    {
+      "name": "France MID 6 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 18
+    },
+    {
+      "name": "France MID 7 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 19
+    },
+    {
+      "name": "France MID 8 (placeholder)",
+      "position": "MID",
+      "shirtNumber": 20
+    },
+    {
+      "name": "France FWD 1 (placeholder)",
+      "position": "FWD",
+      "shirtNumber": 21
+    },
+    {
+      "name": "France FWD 2 (placeholder)",
+      "position": "FWD",
+      "shirtNumber": 22
+    },
+    {
+      "name": "France FWD 3 (placeholder)",
+      "position": "FWD",
+      "shirtNumber": 23
+    },
+    {
+      "name": "France FWD 4 (placeholder)",
+      "position": "FWD",
+      "shirtNumber": 24
+    },
+    {
+      "name": "France FWD 5 (placeholder)",
+      "position": "FWD",
+      "shirtNumber": 25
+    },
+    {
+      "name": "France FWD 6 (placeholder)",
+      "position": "FWD",
+      "shirtNumber": 26
+    }
+  ]
+}

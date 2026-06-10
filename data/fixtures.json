@@ -1,0 +1,942 @@
+{
+  "_comment": "PLACEHOLDER fixtures for FIFA World Cup 2026 (104 matches). Teams/codes/kickoffs are placeholders. Set homeCode/awayCode to ISO-2 codes (e.g. BR, AR) for flag emojis. The seed script prefers football-data.org and only falls back to this file. Regenerate with scripts/gen-fixtures.mjs.",
+  "count": 104,
+  "matches": [
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group A",
+      "homeTeam": "A1 (TBD)",
+      "awayTeam": "A2 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-11T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group A",
+      "homeTeam": "A3 (TBD)",
+      "awayTeam": "A4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-11T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group A",
+      "homeTeam": "A1 (TBD)",
+      "awayTeam": "A3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-11T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group A",
+      "homeTeam": "A2 (TBD)",
+      "awayTeam": "A4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-12T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group A",
+      "homeTeam": "A1 (TBD)",
+      "awayTeam": "A4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-12T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group A",
+      "homeTeam": "A2 (TBD)",
+      "awayTeam": "A3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-12T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group B",
+      "homeTeam": "B1 (TBD)",
+      "awayTeam": "B2 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-13T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group B",
+      "homeTeam": "B3 (TBD)",
+      "awayTeam": "B4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-13T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group B",
+      "homeTeam": "B1 (TBD)",
+      "awayTeam": "B3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-13T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group B",
+      "homeTeam": "B2 (TBD)",
+      "awayTeam": "B4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-14T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group B",
+      "homeTeam": "B1 (TBD)",
+      "awayTeam": "B4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-14T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group B",
+      "homeTeam": "B2 (TBD)",
+      "awayTeam": "B3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-14T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group C",
+      "homeTeam": "C1 (TBD)",
+      "awayTeam": "C2 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-15T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group C",
+      "homeTeam": "C3 (TBD)",
+      "awayTeam": "C4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-15T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group C",
+      "homeTeam": "C1 (TBD)",
+      "awayTeam": "C3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-15T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group C",
+      "homeTeam": "C2 (TBD)",
+      "awayTeam": "C4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-16T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group C",
+      "homeTeam": "C1 (TBD)",
+      "awayTeam": "C4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-16T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group C",
+      "homeTeam": "C2 (TBD)",
+      "awayTeam": "C3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-16T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group D",
+      "homeTeam": "D1 (TBD)",
+      "awayTeam": "D2 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-17T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group D",
+      "homeTeam": "D3 (TBD)",
+      "awayTeam": "D4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-17T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group D",
+      "homeTeam": "D1 (TBD)",
+      "awayTeam": "D3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-17T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group D",
+      "homeTeam": "D2 (TBD)",
+      "awayTeam": "D4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-18T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group D",
+      "homeTeam": "D1 (TBD)",
+      "awayTeam": "D4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-18T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group D",
+      "homeTeam": "D2 (TBD)",
+      "awayTeam": "D3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-18T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group E",
+      "homeTeam": "E1 (TBD)",
+      "awayTeam": "E2 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-19T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group E",
+      "homeTeam": "E3 (TBD)",
+      "awayTeam": "E4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-19T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group E",
+      "homeTeam": "E1 (TBD)",
+      "awayTeam": "E3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-19T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group E",
+      "homeTeam": "E2 (TBD)",
+      "awayTeam": "E4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-20T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group E",
+      "homeTeam": "E1 (TBD)",
+      "awayTeam": "E4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-20T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group E",
+      "homeTeam": "E2 (TBD)",
+      "awayTeam": "E3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-20T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group F",
+      "homeTeam": "F1 (TBD)",
+      "awayTeam": "F2 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-21T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group F",
+      "homeTeam": "F3 (TBD)",
+      "awayTeam": "F4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-21T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group F",
+      "homeTeam": "F1 (TBD)",
+      "awayTeam": "F3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-21T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group F",
+      "homeTeam": "F2 (TBD)",
+      "awayTeam": "F4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-22T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group F",
+      "homeTeam": "F1 (TBD)",
+      "awayTeam": "F4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-22T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group F",
+      "homeTeam": "F2 (TBD)",
+      "awayTeam": "F3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-22T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group G",
+      "homeTeam": "G1 (TBD)",
+      "awayTeam": "G2 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-23T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group G",
+      "homeTeam": "G3 (TBD)",
+      "awayTeam": "G4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-23T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group G",
+      "homeTeam": "G1 (TBD)",
+      "awayTeam": "G3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-23T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group G",
+      "homeTeam": "G2 (TBD)",
+      "awayTeam": "G4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-24T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group G",
+      "homeTeam": "G1 (TBD)",
+      "awayTeam": "G4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-24T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group G",
+      "homeTeam": "G2 (TBD)",
+      "awayTeam": "G3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-24T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group H",
+      "homeTeam": "H1 (TBD)",
+      "awayTeam": "H2 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-25T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group H",
+      "homeTeam": "H3 (TBD)",
+      "awayTeam": "H4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-25T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group H",
+      "homeTeam": "H1 (TBD)",
+      "awayTeam": "H3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-25T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group H",
+      "homeTeam": "H2 (TBD)",
+      "awayTeam": "H4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-26T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group H",
+      "homeTeam": "H1 (TBD)",
+      "awayTeam": "H4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-26T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group H",
+      "homeTeam": "H2 (TBD)",
+      "awayTeam": "H3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-26T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group I",
+      "homeTeam": "I1 (TBD)",
+      "awayTeam": "I2 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-27T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group I",
+      "homeTeam": "I3 (TBD)",
+      "awayTeam": "I4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-27T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group I",
+      "homeTeam": "I1 (TBD)",
+      "awayTeam": "I3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-27T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group I",
+      "homeTeam": "I2 (TBD)",
+      "awayTeam": "I4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-28T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group I",
+      "homeTeam": "I1 (TBD)",
+      "awayTeam": "I4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-28T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group I",
+      "homeTeam": "I2 (TBD)",
+      "awayTeam": "I3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-28T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group J",
+      "homeTeam": "J1 (TBD)",
+      "awayTeam": "J2 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-29T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group J",
+      "homeTeam": "J3 (TBD)",
+      "awayTeam": "J4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-29T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group J",
+      "homeTeam": "J1 (TBD)",
+      "awayTeam": "J3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-29T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group J",
+      "homeTeam": "J2 (TBD)",
+      "awayTeam": "J4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-30T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group J",
+      "homeTeam": "J1 (TBD)",
+      "awayTeam": "J4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-30T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group J",
+      "homeTeam": "J2 (TBD)",
+      "awayTeam": "J3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-30T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group K",
+      "homeTeam": "K1 (TBD)",
+      "awayTeam": "K2 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-01T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group K",
+      "homeTeam": "K3 (TBD)",
+      "awayTeam": "K4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-01T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group K",
+      "homeTeam": "K1 (TBD)",
+      "awayTeam": "K3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-01T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group K",
+      "homeTeam": "K2 (TBD)",
+      "awayTeam": "K4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-02T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group K",
+      "homeTeam": "K1 (TBD)",
+      "awayTeam": "K4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-02T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group K",
+      "homeTeam": "K2 (TBD)",
+      "awayTeam": "K3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-02T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group L",
+      "homeTeam": "L1 (TBD)",
+      "awayTeam": "L2 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-03T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group L",
+      "homeTeam": "L3 (TBD)",
+      "awayTeam": "L4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-03T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group L",
+      "homeTeam": "L1 (TBD)",
+      "awayTeam": "L3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-03T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group L",
+      "homeTeam": "L2 (TBD)",
+      "awayTeam": "L4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-04T16:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group L",
+      "homeTeam": "L1 (TBD)",
+      "awayTeam": "L4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-04T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group L",
+      "homeTeam": "L2 (TBD)",
+      "awayTeam": "L3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-04T22:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_32",
+      "groupName": null,
+      "homeTeam": "ROUND OF 32 Home 1 (TBD)",
+      "awayTeam": "ROUND OF 32 Away 1 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-28T16:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_32",
+      "groupName": null,
+      "homeTeam": "ROUND OF 32 Home 2 (TBD)",
+      "awayTeam": "ROUND OF 32 Away 2 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-28T19:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_32",
+      "groupName": null,
+      "homeTeam": "ROUND OF 32 Home 3 (TBD)",
+      "awayTeam": "ROUND OF 32 Away 3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-28T22:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_32",
+      "groupName": null,
+      "homeTeam": "ROUND OF 32 Home 4 (TBD)",
+      "awayTeam": "ROUND OF 32 Away 4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-29T16:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_32",
+      "groupName": null,
+      "homeTeam": "ROUND OF 32 Home 5 (TBD)",
+      "awayTeam": "ROUND OF 32 Away 5 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-29T19:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_32",
+      "groupName": null,
+      "homeTeam": "ROUND OF 32 Home 6 (TBD)",
+      "awayTeam": "ROUND OF 32 Away 6 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-29T22:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_32",
+      "groupName": null,
+      "homeTeam": "ROUND OF 32 Home 7 (TBD)",
+      "awayTeam": "ROUND OF 32 Away 7 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-30T16:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_32",
+      "groupName": null,
+      "homeTeam": "ROUND OF 32 Home 8 (TBD)",
+      "awayTeam": "ROUND OF 32 Away 8 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-30T19:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_32",
+      "groupName": null,
+      "homeTeam": "ROUND OF 32 Home 9 (TBD)",
+      "awayTeam": "ROUND OF 32 Away 9 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-06-30T22:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_32",
+      "groupName": null,
+      "homeTeam": "ROUND OF 32 Home 10 (TBD)",
+      "awayTeam": "ROUND OF 32 Away 10 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-01T16:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_32",
+      "groupName": null,
+      "homeTeam": "ROUND OF 32 Home 11 (TBD)",
+      "awayTeam": "ROUND OF 32 Away 11 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-01T19:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_32",
+      "groupName": null,
+      "homeTeam": "ROUND OF 32 Home 12 (TBD)",
+      "awayTeam": "ROUND OF 32 Away 12 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-01T22:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_32",
+      "groupName": null,
+      "homeTeam": "ROUND OF 32 Home 13 (TBD)",
+      "awayTeam": "ROUND OF 32 Away 13 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-02T16:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_32",
+      "groupName": null,
+      "homeTeam": "ROUND OF 32 Home 14 (TBD)",
+      "awayTeam": "ROUND OF 32 Away 14 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-02T19:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_32",
+      "groupName": null,
+      "homeTeam": "ROUND OF 32 Home 15 (TBD)",
+      "awayTeam": "ROUND OF 32 Away 15 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-02T22:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_32",
+      "groupName": null,
+      "homeTeam": "ROUND OF 32 Home 16 (TBD)",
+      "awayTeam": "ROUND OF 32 Away 16 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-03T16:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_16",
+      "groupName": null,
+      "homeTeam": "ROUND OF 16 Home 1 (TBD)",
+      "awayTeam": "ROUND OF 16 Away 1 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-03T19:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_16",
+      "groupName": null,
+      "homeTeam": "ROUND OF 16 Home 2 (TBD)",
+      "awayTeam": "ROUND OF 16 Away 2 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-03T22:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_16",
+      "groupName": null,
+      "homeTeam": "ROUND OF 16 Home 3 (TBD)",
+      "awayTeam": "ROUND OF 16 Away 3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-04T16:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_16",
+      "groupName": null,
+      "homeTeam": "ROUND OF 16 Home 4 (TBD)",
+      "awayTeam": "ROUND OF 16 Away 4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-04T19:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_16",
+      "groupName": null,
+      "homeTeam": "ROUND OF 16 Home 5 (TBD)",
+      "awayTeam": "ROUND OF 16 Away 5 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-04T22:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_16",
+      "groupName": null,
+      "homeTeam": "ROUND OF 16 Home 6 (TBD)",
+      "awayTeam": "ROUND OF 16 Away 6 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-05T16:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_16",
+      "groupName": null,
+      "homeTeam": "ROUND OF 16 Home 7 (TBD)",
+      "awayTeam": "ROUND OF 16 Away 7 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-05T19:00:00.000Z"
+    },
+    {
+      "stage": "ROUND_OF_16",
+      "groupName": null,
+      "homeTeam": "ROUND OF 16 Home 8 (TBD)",
+      "awayTeam": "ROUND OF 16 Away 8 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-05T22:00:00.000Z"
+    },
+    {
+      "stage": "QUARTER_FINALS",
+      "groupName": null,
+      "homeTeam": "QUARTER FINALS Home 1 (TBD)",
+      "awayTeam": "QUARTER FINALS Away 1 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-06T16:00:00.000Z"
+    },
+    {
+      "stage": "QUARTER_FINALS",
+      "groupName": null,
+      "homeTeam": "QUARTER FINALS Home 2 (TBD)",
+      "awayTeam": "QUARTER FINALS Away 2 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-06T19:00:00.000Z"
+    },
+    {
+      "stage": "QUARTER_FINALS",
+      "groupName": null,
+      "homeTeam": "QUARTER FINALS Home 3 (TBD)",
+      "awayTeam": "QUARTER FINALS Away 3 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-06T22:00:00.000Z"
+    },
+    {
+      "stage": "QUARTER_FINALS",
+      "groupName": null,
+      "homeTeam": "QUARTER FINALS Home 4 (TBD)",
+      "awayTeam": "QUARTER FINALS Away 4 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-07T16:00:00.000Z"
+    },
+    {
+      "stage": "SEMI_FINALS",
+      "groupName": null,
+      "homeTeam": "SEMI FINALS Home 1 (TBD)",
+      "awayTeam": "SEMI FINALS Away 1 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-07T19:00:00.000Z"
+    },
+    {
+      "stage": "SEMI_FINALS",
+      "groupName": null,
+      "homeTeam": "SEMI FINALS Home 2 (TBD)",
+      "awayTeam": "SEMI FINALS Away 2 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-07T22:00:00.000Z"
+    },
+    {
+      "stage": "THIRD_PLACE",
+      "groupName": null,
+      "homeTeam": "THIRD PLACE Home 1 (TBD)",
+      "awayTeam": "THIRD PLACE Away 1 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-08T16:00:00.000Z"
+    },
+    {
+      "stage": "FINAL",
+      "groupName": null,
+      "homeTeam": "FINAL Home 1 (TBD)",
+      "awayTeam": "FINAL Away 1 (TBD)",
+      "homeCode": null,
+      "awayCode": null,
+      "kickoffUtc": "2026-07-08T19:00:00.000Z"
+    }
+  ]
+}

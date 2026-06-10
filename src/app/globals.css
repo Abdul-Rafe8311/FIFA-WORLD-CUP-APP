@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: #050807;
+  color: #ffffff;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+/* App frame backdrop on larger screens */
+body {
+  background-image: radial-gradient(
+      1200px 600px at 50% -10%,
+      rgba(0, 230, 118, 0.08),
+      transparent 60%
+    ),
+    #050807;
+  min-height: 100dvh;
+}
+
+@layer components {
+  .app-shell {
+    @apply mx-auto w-full max-w-app min-h-[100dvh] bg-ink relative;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04), 0 30px 80px rgba(0, 0, 0, 0.6);
+  }
+
+  .card {
+    @apply rounded-2xl bg-ink-card border border-ink-line p-4;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 font-semibold
+      min-h-[44px] active:scale-[0.97] transition-transform select-none;
+  }
+
+  .btn-primary {
+    @apply btn bg-pitch text-black;
+  }
+
+  .btn-ghost {
+    @apply btn bg-ink-soft text-white border border-ink-line;
+  }
+
+  .tag {
+    @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold;
+  }
+
+  .skeleton {
+    @apply animate-pulse-soft rounded-lg bg-ink-soft;
+  }
+
+  .tab-active {
+    @apply text-pitch;
+  }
+}
+
+/* hide scrollbars on horizontal scrollers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* number stepper inputs */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
