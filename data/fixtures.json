@@ -1,6 +1,6 @@
 {
   "_comment": "Real FIFA World Cup 2026 draw + schedule. Group times from the official schedule (entered in PKT, stored in UTC). A few matchday-2 group games and knockout teams are pending. Regenerate with scripts/gen-fixtures.mjs.",
-  "count": 98,
+  "count": 104,
   "matches": [
     {
       "stage": "GROUP_STAGE",
@@ -379,6 +379,60 @@
       "homeCode": "CO",
       "awayCode": "CD",
       "kickoffUtc": "2026-06-24T02:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group I",
+      "homeTeam": "France",
+      "awayTeam": "Iraq",
+      "homeCode": "FR",
+      "awayCode": "IQ",
+      "kickoffUtc": "2026-06-22T19:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group I",
+      "homeTeam": "Senegal",
+      "awayTeam": "Norway",
+      "homeCode": "SN",
+      "awayCode": "NO",
+      "kickoffUtc": "2026-06-22T22:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group J",
+      "homeTeam": "Argentina",
+      "awayTeam": "Austria",
+      "homeCode": "AR",
+      "awayCode": "AT",
+      "kickoffUtc": "2026-06-23T01:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group J",
+      "homeTeam": "Algeria",
+      "awayTeam": "Jordan",
+      "homeCode": "DZ",
+      "awayCode": "JO",
+      "kickoffUtc": "2026-06-23T04:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group K",
+      "homeTeam": "Portugal",
+      "awayTeam": "Uzbekistan",
+      "homeCode": "PT",
+      "awayCode": "UZ",
+      "kickoffUtc": "2026-06-23T20:00:00.000Z"
+    },
+    {
+      "stage": "GROUP_STAGE",
+      "groupName": "Group L",
+      "homeTeam": "England",
+      "awayTeam": "Ghana",
+      "homeCode": "GB",
+      "awayCode": "GH",
+      "kickoffUtc": "2026-06-23T20:00:00.000Z"
     },
     {
       "stage": "GROUP_STAGE",

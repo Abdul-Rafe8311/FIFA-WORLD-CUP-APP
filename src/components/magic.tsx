@@ -101,10 +101,13 @@ export function ShimmerButton({
   );
 }
 
+// Seamless honeycomb tile (hero-patterns "Hexagons"), pitch-green lines.
+const HEX_SVG =
+  "%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cpath fill='%2300e676' fill-opacity='0.5' fill-rule='evenodd' d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/svg%3E";
+
 /**
- * Honeycomb hexagon-pattern background. Use `fixed` to fill the whole viewport
- * behind all content, or default (absolute) to fill the nearest positioned
- * ancestor.
+ * Honeycomb hexagon-pattern background. `fixed` fills the whole viewport
+ * behind content; otherwise it fills the nearest positioned ancestor.
  */
 export function HexagonBackground({
   className,
@@ -113,38 +116,20 @@ export function HexagonBackground({
   className?: string;
   fixed?: boolean;
 }) {
-  // A seamless pointy-top hexagon tile.
   return (
     <div
       aria-hidden
       className={cn(
-        "pointer-events-none overflow-hidden",
-        fixed ? "fixed inset-0 -z-10 opacity-[0.12]" : "absolute inset-0 -z-10 opacity-[0.16]",
+        "pointer-events-none",
+        fixed ? "fixed inset-0 -z-10 opacity-40" : "absolute inset-0 -z-10 opacity-60",
         className,
       )}
-    >
-      <svg width="100%" height="100%">
-        <defs>
-          <pattern id="hexgrid" width="48" height="83.14" patternUnits="userSpaceOnUse" patternTransform="scale(0.9)">
-            <path
-              d="M24 0 L48 13.86 L48 41.57 L24 55.43 L0 41.57 L0 13.86 Z
-                 M24 55.43 L48 69.28 L48 97 L24 110.86 L0 97 L0 69.28 Z
-                 M48 41.57 L72 55.43 L72 83.14 M0 41.57 L-24 55.43 L-24 83.14"
-              fill="none"
-              stroke="rgba(0,230,118,0.30)"
-              strokeWidth="1"
-            />
-          </pattern>
-          <radialGradient id="hexfade" cx="50%" cy="30%" r="75%">
-            <stop offset="0%" stopColor="white" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="white" stopOpacity="0" />
-          </radialGradient>
-          <mask id="hexmask">
-            <rect width="100%" height="100%" fill="url(#hexfade)" />
-          </mask>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#hexgrid)" mask="url(#hexmask)" />
-      </svg>
-    </div>
+      style={{
+        backgroundImage: `url("data:image/svg+xml,${HEX_SVG}")`,
+        backgroundSize: "60px 105px",
+        maskImage: "radial-gradient(120% 90% at 50% 0%, #000 35%, transparent 80%)",
+        WebkitMaskImage: "radial-gradient(120% 90% at 50% 0%, #000 35%, transparent 80%)",
+      }}
+    />
   );
 }

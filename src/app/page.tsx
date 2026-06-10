@@ -206,33 +206,55 @@ export default async function Landing() {
 
 // ---------------------------------------------------------------------------
 function TopNav({ loggedIn }: { loggedIn: boolean }) {
+  const links = [
+    { href: "#features", label: "Features" },
+    { href: "/leaderboard", label: "Leaderboard" },
+    { href: "/penalty", label: "Penalty" },
+  ];
   return (
-    <nav className="sticky top-0 z-50 border-b border-ink-line bg-ink/70 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
-        <Link href="/" className="flex items-center gap-2">
+    <div className="sticky top-3 z-50 px-3">
+      <nav className="mx-auto flex max-w-4xl items-center justify-between gap-2 rounded-full border border-ink-line bg-ink-card/80 py-2 pl-3 pr-2 shadow-xl backdrop-blur-md">
+        <Link href="/" className="flex items-center gap-2 pl-1">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-pitch text-base">⚽</span>
           <span className="text-lg font-black">
             Goal<span className="text-pitch">Cast</span>
           </span>
         </Link>
-        <div className="hidden items-center gap-6 text-sm text-white/60 sm:flex">
-          <a href="#features" className="hover:text-white">Features</a>
-          <Link href="/leaderboard" className="hover:text-white">Leaderboard</Link>
+
+        {/* centered links with hover pill */}
+        <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 md:flex">
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="rounded-full px-4 py-2 text-sm font-medium text-white/65 transition-colors hover:bg-white/10 hover:text-white"
+            >
+              {l.label}
+            </a>
+          ))}
         </div>
-        <div className="flex items-center gap-2">
+
+        <div className="flex items-center gap-1">
           {loggedIn ? (
-            <Link href="/schedule" className="btn-primary px-4 text-sm">Open App</Link>
+            <Link href="/schedule" className="rounded-full bg-pitch px-5 py-2 text-sm font-bold text-black transition-transform active:scale-95">
+              Open App
+            </Link>
           ) : (
             <>
-              <Link href="/login?mode=login" className="hidden px-3 text-sm font-semibold text-white/70 hover:text-white sm:block">
+              <Link
+                href="/login?mode=login"
+                className="hidden rounded-full px-4 py-2 text-sm font-semibold text-white/70 transition-colors hover:bg-white/10 hover:text-white sm:block"
+              >
                 Log in
               </Link>
-              <Link href="/login?mode=signup" className="btn-primary px-4 text-sm">Get started</Link>
+              <Link href="/login?mode=signup" className="rounded-full bg-pitch px-5 py-2 text-sm font-bold text-black transition-transform active:scale-95">
+                Get started
+              </Link>
             </>
           )}
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 }
 
