@@ -117,20 +117,18 @@ function LoginForm() {
         </div>
       </div>
 
-      {/* Right: image panel with testimonial */}
-      <div className="relative hidden overflow-hidden lg:block">
-        {imgOk ? (
+      {/* Right: branded panel with the World Cup logo + testimonial */}
+      <div className="relative hidden overflow-hidden bg-gradient-to-br from-pitch/25 via-ink to-ink lg:block">
+        {imgOk && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src="/auth-side.jpg"
-            alt=""
+            src="/auth-side.png"
+            alt="FIFA World Cup 2026"
             onError={() => setImgOk(false)}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute left-1/2 top-1/2 w-1/2 max-w-[280px] -translate-x-1/2 -translate-y-1/2 object-contain drop-shadow-2xl"
           />
-        ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-pitch/30 via-emerald-700/20 to-ink" />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 
         <div className="absolute bottom-8 left-8 right-8">
           <div className="mb-3 flex gap-2">

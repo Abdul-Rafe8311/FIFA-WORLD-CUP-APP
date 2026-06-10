@@ -8,10 +8,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Accent (kept the name "pitch" for code stability) — electric blue.
         pitch: {
-          DEFAULT: "#00e676",
-          dim: "#00c853",
-          dark: "#0a3d1f",
+          DEFAULT: "#2f80ff",
+          dim: "#1f6feb",
+          dark: "#0b1f3a",
         },
         ink: {
           DEFAULT: "#0a0e0d",

@@ -29,7 +29,7 @@ export async function GET(
     .limit(1);
 
   const p = rows[0];
-  const green = "#00e676";
+  const green = "#2f80ff"; // accent (electric blue)
   const ink = "#050807";
 
   if (!p) {

@@ -39,7 +39,7 @@ export default function VideoText({
   if (!ok) {
     return (
       <h1
-        className={`bg-gradient-to-br from-white via-pitch to-emerald-400 bg-clip-text text-center font-black leading-none tracking-tight text-transparent ${className}`}
+        className={`bg-gradient-to-br from-white via-pitch to-sky-400 bg-clip-text text-center font-black leading-none tracking-tight text-transparent ${className}`}
         style={{ fontSize: height }}
       >
         {text}

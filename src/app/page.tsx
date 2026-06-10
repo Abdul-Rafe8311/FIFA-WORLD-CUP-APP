@@ -37,7 +37,7 @@ export default async function Landing() {
         <h1 className="mx-auto mt-6 max-w-4xl text-balance text-5xl font-black leading-[1.05] tracking-tight sm:text-7xl">
           Predict every match.
           <br />
-          <span className="bg-gradient-to-r from-pitch via-emerald-400 to-pitch bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-pitch via-sky-400 to-pitch bg-clip-text text-transparent">
             Beat the AI. Top your country.
           </span>
         </h1>
