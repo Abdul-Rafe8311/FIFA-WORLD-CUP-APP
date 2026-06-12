@@ -61,6 +61,10 @@ const config: Config = {
           "0%, 100%": { transform: "translate(0,0)", opacity: "0.4" },
           "50%": { transform: "translate(34px,-26px)", opacity: "1" },
         },
+        "ripple-fade": {
+          "0%": { backgroundColor: "rgba(47,128,255,0.55)" },
+          "100%": { backgroundColor: "rgba(47,128,255,0)" },
+        },
       },
       animation: {
         "pop-in": "pop-in 0.35s ease-out",

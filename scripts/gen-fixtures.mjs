@@ -92,25 +92,62 @@ const KO = [
 
 const toUtc = (pkt) => new Date(`${pkt}:00+05:00`).toISOString();
 
+// The 16 official FIFA World Cup 2026 host stadiums (city, country).
+// NOTE: per-match venue assignment below is PROVISIONAL (distributed across
+// the real host venues, with co-host openers anchored to their home city).
+// Send the official venue-per-match list to lock these in exactly.
+const HOSTS = [
+  "Estadio Azteca, Mexico City, Mexico",
+  "Estadio Akron, Guadalajara, Mexico",
+  "Estadio BBVA, Monterrey, Mexico",
+  "BMO Field, Toronto, Canada",
+  "BC Place, Vancouver, Canada",
+  "MetLife Stadium, New York/New Jersey, USA",
+  "SoFi Stadium, Los Angeles, USA",
+  "AT&T Stadium, Dallas, USA",
+  "Mercedes-Benz Stadium, Atlanta, USA",
+  "Hard Rock Stadium, Miami, USA",
+  "NRG Stadium, Houston, USA",
+  "Arrowhead Stadium, Kansas City, USA",
+  "Lincoln Financial Field, Philadelphia, USA",
+  "Levi's Stadium, San Francisco Bay Area, USA",
+  "Lumen Field, Seattle, USA",
+  "Gillette Stadium, Boston, USA",
+];
+// Anchor each co-host's home opener to their flagship stadium.
+const HOME_VENUE = {
+  MX: "Estadio Azteca, Mexico City, Mexico",
+  CA: "BMO Field, Toronto, Canada",
+  US: "SoFi Stadium, Los Angeles, USA",
+};
+const venueFor = (i, home) => HOME_VENUE[home] ?? HOSTS[i % HOSTS.length];
+
 const matches = [];
-for (const [pkt, group, h, a] of GROUP) {
+GROUP.forEach(([pkt, group, h, a], i) => {
   matches.push({
     stage: "GROUP_STAGE",
     groupName: `Group ${group}`,
     homeTeam: NAME[h], awayTeam: NAME[a],
     homeCode: ISO(h), awayCode: ISO(a),
+    venue: venueFor(i, h),
     kickoffUtc: toUtc(pkt),
   });
-}
-for (const [pkt, stage, h, a] of KO) {
+});
+// Marquee knockout venues (final & third place are official); rest distributed.
+const KO_VENUE = {
+  FINAL: "MetLife Stadium, New York/New Jersey, USA",
+  THIRD_PLACE: "Hard Rock Stadium, Miami, USA",
+};
+KO.forEach(([pkt, stage, h, a], i) => {
   matches.push({
     stage,
     groupName: null,
     homeTeam: h, awayTeam: a,
     homeCode: null, awayCode: null,
+    venue: KO_VENUE[stage] ?? HOSTS[(i + 3) % HOSTS.length],
     kickoffUtc: toUtc(pkt),
   });
-}
+});
 
 const out = {
   _comment:

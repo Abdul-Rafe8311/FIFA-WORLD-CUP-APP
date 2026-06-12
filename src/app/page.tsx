@@ -3,6 +3,8 @@ import { auth } from "@/lib/auth";
 import { Marquee, NationChip, ShimmerLink, HexagonBackground } from "@/components/magic";
 import IconCloud from "@/components/IconCloud";
 import VideoText from "@/components/VideoText";
+import Typewriter from "@/components/Typewriter";
+import BackgroundRipple from "@/components/BackgroundRipple";
 import FeatureSkeletons from "@/components/FeatureSkeletons";
 import Faq from "@/components/Faq";
 import { WC_NATIONS } from "@/lib/wc-nations";
@@ -22,6 +24,7 @@ export default async function Landing() {
 
       {/* ===== HERO ===== */}
       <section className="relative mx-auto max-w-6xl px-5 pt-16 text-center sm:pt-24">
+        <BackgroundRipple className="opacity-60" />
         <HexagonBackground className="opacity-[0.14]" />
         <Link
           href="#features"
@@ -37,10 +40,17 @@ export default async function Landing() {
         </div>
 
         <h1 className="mx-auto mt-6 max-w-4xl text-balance text-5xl font-black leading-[1.05] tracking-tight sm:text-7xl">
-          Predict every match.
+          Predict every match and
           <br />
           <span className="bg-gradient-to-r from-pitch via-sky-400 to-pitch bg-clip-text text-transparent">
-            Beat the AI. Top your country.
+            <Typewriter
+              words={[
+                "beat the AI.",
+                "top your country.",
+                "climb the ranks.",
+                "win bragging rights.",
+              ]}
+            />
           </span>
         </h1>
 
@@ -170,6 +180,7 @@ export default async function Landing() {
 function TopNav({ loggedIn }: { loggedIn: boolean }) {
   const links = [
     { href: "#features", label: "Features" },
+    { href: "/fixtures", label: "Schedule" },
     { href: "/leaderboard", label: "Leaderboard" },
     { href: "/penalty", label: "Penalty" },
   ];
